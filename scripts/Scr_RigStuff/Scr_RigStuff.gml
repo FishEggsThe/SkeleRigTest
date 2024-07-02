@@ -1,15 +1,16 @@
-function ShoulderArm(s) constructor {
-	xPos = x+32
-	yPos = y+32
-	sprite = Spr_Arm
+function ShoulderArm(s, c) constructor {
+	creator = c
 	side = s // left = -1, right = 1
+	xPos = creator.x+32*side
+	yPos = creator.y+32*side
+	sprite = Spr_Arm
 	angle = 90 - 90*side
 	
 	static GetShoulderPositionX = function(){
-		return x+32
+		return creator.x+32*side
 	}
 	static GetShoulderPositionY = function(){
-		return y+32
+		return creator.y+32*side
 	}
 	
 	static DrawArm = function() {
@@ -17,7 +18,7 @@ function ShoulderArm(s) constructor {
 	}
 }
 
-function ForeArm(s) : ShoulderArm(s) constructor {
+function ForeArm(s, c) : ShoulderArm(s, c) constructor {
 	distanceToPoint = sprite_get_width(sprite)/2
 	static GetForearmPositions = function(sAngle) {
 		var a = degtorad(sAngle); var xP = distanceToPoint*cos(a); var yP = distanceToPoint*sin(a)
@@ -30,9 +31,9 @@ function ForeArm(s) : ShoulderArm(s) constructor {
 	sprite = Spr_Arm
 }
 
-function FullArm(s) constructor {
-	shoulderArm = ShoulderArm(s)
-	foreArm = ForeArm(s)
+function FullArm(s, c) constructor {
+	shoulderArm = new ShoulderArm(s, c)
+	foreArm = new ForeArm(s, c)
 	
 	static DrawFullArm = function() {
 		shoulderArm.DrawArm()

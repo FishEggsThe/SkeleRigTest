@@ -1,2 +1,2 @@
-rightArm = FullArm(1)
-leftArm = FullArm(-1)
+rightArm = new FullArm(1, id)
+leftArm = new FullArm(-1, id)
