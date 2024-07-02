@@ -36,6 +36,7 @@
   "resources":[
     {"id":{"name":"Obj_TheThing","path":"objects/Obj_TheThing/Obj_TheThing.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"Scr_RigStuff","path":"scripts/Scr_RigStuff/Scr_RigStuff.yy",},},
     {"id":{"name":"Spr_Arm","path":"sprites/Spr_Arm/Spr_Arm.yy",},},
     {"id":{"name":"Spr_BlockBody","path":"sprites/Spr_BlockBody/Spr_BlockBody.yy",},},
     {"id":{"name":"Spr_Hand","path":"sprites/Spr_Hand/Spr_Hand.yy",},},

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Scr_RigStuff",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Scr_RigStuff",
+  "parent":{
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
