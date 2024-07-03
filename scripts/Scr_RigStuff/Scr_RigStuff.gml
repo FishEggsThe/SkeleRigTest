@@ -52,8 +52,9 @@ function FullArm(s, c) constructor {
 		foreArm.SetForearmPositions(shoulderArm.gotoAngle)
 	}
 	static SetArm = function() {
-		shoulderArm.gotoAngle += 3*sin(degtorad(shoulderArm.angle - shoulderArm.gotoAngle));
-		foreArm.gotoAngle += 3*sin(degtorad(foreArm.angle - foreArm.gotoAngle))
+		var armSpeed = 55
+		shoulderArm.gotoAngle += armSpeed*sin(degtorad(shoulderArm.angle - shoulderArm.gotoAngle));
+		foreArm.gotoAngle += armSpeed*sin(degtorad(foreArm.angle - foreArm.gotoAngle))
 		
 		SetPositions()
 	}
