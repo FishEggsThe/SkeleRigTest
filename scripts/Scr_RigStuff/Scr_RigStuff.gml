@@ -32,6 +32,7 @@ function ForeArm(s, c) : ShoulderArm(s, c) constructor {
 
 		xPos = xP
 		yPos = yP
+		armSpeed = 65
 	}
 	SetForearmPositions(angle)
 	sprite = Spr_ForeArm
@@ -57,10 +58,11 @@ function FullArm(s, c) constructor {
 		foreArm.SetForearmPositions(shoulderArm.gotoAngle)
 	}
 	static SetArm = function() {
-		var jiggle = random_range(-shoulderArm.armJiggle, shoulderArm.armJiggle)
-		shoulderArm.gotoAngle += shoulderArm.armSpeed*sin(degtorad((shoulderArm.angle+jiggle) - shoulderArm.gotoAngle));
-		foreArm.gotoAngle += foreArm.armSpeed*sin(degtorad((foreArm.angle+jiggle) - foreArm.gotoAngle))
-		if shoulderArm.armJiggle > 0 {shoulderArm.armJiggle--}
+		var jiggleShoulder = random_range(-shoulderArm.armJiggle, shoulderArm.armJiggle)
+		var jiggleForearm = random_range(-foreArm.armJiggle, foreArm.armJiggle)
+		shoulderArm.gotoAngle += shoulderArm.armSpeed*sin(degtorad((shoulderArm.angle+jiggleShoulder) - shoulderArm.gotoAngle));
+		foreArm.gotoAngle += foreArm.armSpeed*sin(degtorad((foreArm.angle+jiggleForearm) - foreArm.gotoAngle))
+		if shoulderArm.armJiggle > 0 {shoulderArm.armJiggle--; foreArm.armJiggle--}
 		
 		SetPositions()
 	}
